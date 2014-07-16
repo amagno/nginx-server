@@ -1,3 +1,7 @@
 ---
 - name: Teste role nginx-server on TravisCI
-- name: Outro teste
+  shell: echo 'a task echo funcionou'
+  register: test
+
+
+- debug: msg="Echo function was {{ test.stdout }}"
