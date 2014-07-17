@@ -3,3 +3,8 @@
   apt: name=nginx state=present
   register: debug_nginx
   notify: start nginx
+
+
+
+
+- debug: msg="Debug of task 1 - Install Nginx {{ debug_nginx }}"
