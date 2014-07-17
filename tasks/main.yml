@@ -1,6 +1,6 @@
 ---
 - name: Teste role nginx-server on TravisCI
-  shell: echo 'a task echo funcionou'
+  command: echo {{ msg }}
   register: test
 
 
