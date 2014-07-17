@@ -1,7 +1,11 @@
 ---
-- name: Teste role nginx-server on TravisCI
-  command: echo {{ msg }}
-  register: test
+- name: Teste com variavel na chamada da role
+  command: echo {{ testrolevar }}
+  register: testrolevar
 
+- name: Teste com variavel na pasta vars
+  command: echo {{ testvar }}
+  register: testvar
 
-- debug: msg="Echo function was {{ test.stdout }}"
+- debug: msg="teste role var {{ testrolevar.stdout }}"
+- debug: msg="teste var {{ testvar.stdout }}"
