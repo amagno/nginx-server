@@ -1,11 +1,5 @@
 ---
-- name: Teste com variavel na chamada da role
-  command: echo {{ testrolevar }}
-  register: testrolevar
-
-- name: Teste com variavel na pasta vars
-  command: echo {{ testvar }}
-  register: testvar
-
-- debug: msg="teste role var {{ testrolevar.stdout }}"
-- debug: msg="teste var {{ testvar.stdout }}"
+- name: Install Nignx
+  apt: name=nginx state=present
+  register: debug_nginx
+  notify: start nginx
