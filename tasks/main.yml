@@ -1,4 +1,12 @@
 ---
+- name: Install Python Software Properties
+  apt: name=python-software-properties state=present update_cache=yes
+
+- name: Add Nginx Repository and upgrade
+  apt_repository: repo='ppa:nginx/stable'
+  apt: update_cache=yes
+
+
 - name: Install Nignx
   apt: name=nginx state=present
   register: debug_nginx
