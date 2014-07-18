@@ -10,10 +10,11 @@
 
 - name: Install Nignx
   apt: name=nginx state=present
-  register: debug_nginx
   notify: start nginx
 
 
+- name: Print nginx version
+  command: nginx -v
+  register: nginx_version
 
-
-- debug: msg="Debug of task 1 - Install Nginx {{ debug_nginx }}"
+- debug: msg="This Nginx Version is {{ nginx_version.stdout }}"
